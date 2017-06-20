@@ -17,7 +17,7 @@ exports.bestPracticesAnswers = {
   },
 
   parseInt: function(num) {
-    return parseInt(num);
+    return parseInt(num, 10);
   },
 
   identity: function(val1, val2) {

@@ -1,17 +1,18 @@
 exports = typeof window === 'undefined' ? global : window;
 
 exports.countAnswers = {
-  count: function (start, end) {
 
-    let i = 0
+  count: function(start, end) {
+
+    let i = start
+    console.log(i)
     let counting = setInterval(() => {
-      
-      console.log(start + i)
-      if(i === end) {
-        clearInterval(counting)
-      }
+      if (i === end)
+        return clearInterval(counting)
       i++
+      console.log(i)
     }, 100)
+
     return {
       cancel: () => {
         clearInterval(counting)
