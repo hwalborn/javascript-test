@@ -47,12 +47,12 @@ exports.functionsAnswers = {
   },
 
   curryIt: function(fn) {
-    // if(arguments.length === 1){
-    //   return fn.bind(null, )
-    // } else {
-    //   debugger
-      let args = Array.prototype.filter.call(arguments, (arg) => typeof arg === 'number')
-      return fn.bind(null, ...args)
-    // }
+    return function(fn_a){
+      return function(fn_b){
+        return function(fn_c){
+          return fn(fn_a, fn_b, fn_c);
+        }
+      }
+    }
   }
 };
