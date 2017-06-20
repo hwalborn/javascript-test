@@ -14,16 +14,16 @@ exports.recursionAnswers = {
           }
         })
       } else {
-        func(data)
+        findFiles(data)
       }
     }
 
-    const func = (data) => {
+    const findFiles = (data) => {
       data.files.forEach((file) => {
         if(typeof file === 'string') {
           foundFiles.push(file)
         } else {
-          func(file)
+          findFiles(file)
         }
       })
     }
@@ -31,8 +31,9 @@ exports.recursionAnswers = {
     if(!!dirName) {
       findWithDirectory(data, dirName)
     } else {
-      func(data)
+      findFiles(data)
     }
+
     return foundFiles
   },
 

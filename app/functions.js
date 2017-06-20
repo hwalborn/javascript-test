@@ -33,14 +33,26 @@ exports.functionsAnswers = {
   },
 
   callIt: function(fn) {
-    // let argArray = 
+    let args = Array.prototype.filter.call(arguments, (arg) => typeof arg === 'number')
+    return fn(...args)
   },
 
   partialUsingArguments: function(fn) {
-
+    if(arguments.length === 1){
+      return fn
+    } else {
+      let args = Array.prototype.filter.call(arguments, (arg) => typeof arg === 'number')
+      return fn.bind(null, ...args)
+    }
   },
 
   curryIt: function(fn) {
-
+    // if(arguments.length === 1){
+    //   return fn.bind(null, )
+    // } else {
+    //   debugger
+      let args = Array.prototype.filter.call(arguments, (arg) => typeof arg === 'number')
+      return fn.bind(null, ...args)
+    // }
   }
 };
