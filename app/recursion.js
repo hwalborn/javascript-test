@@ -72,11 +72,11 @@ exports.recursionAnswers = {
         return num
       } else {
         i++
-        return fib(num + prev, num)
+        fib(num + prev, num)
       }
     }
 
-    return fib(0, 1)
+    fib(0, 1)
   },
 
   validParentheses: function(n) {
