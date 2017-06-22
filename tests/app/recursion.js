@@ -48,12 +48,4 @@ describe('recursion', function() {
     expect(result.indexOf('main.js') > -1).to.be.ok;
     expect(result.indexOf('underscore.js') > -1).to.be.ok;
   });
-
-  it('you should be able to find a fibonacci sequence', () => {
-    let answers = [0, 3, 34, 377, 4181]
-    let nums = [1, 5, 10, 15, 20]
-    for(var i = 0; i < nums.length; i++) {
-      expect(recursionAnswers.fibonacci(nums[i])).to.eql(answers[i])
-    }
-  })
 });

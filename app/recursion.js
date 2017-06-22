@@ -65,21 +65,6 @@ exports.recursionAnswers = {
   },
 
   fibonacci: function(n) {
-    let i = 0
-
-    const fib = (num, prev) => {
-      if(i === n - 1) {
-        return num
-      } else {
-        i++
-        return fib(num + prev, num)
-      }
-    }
-
-    return fib(0, 1)
-  },
-
-  validParentheses: function(n) {
 
   }
 };
