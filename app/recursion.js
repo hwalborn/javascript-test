@@ -65,21 +65,46 @@ exports.recursionAnswers = {
   },
 
   fibonacci: function(n) {
-    let i = 0
-
+    let fibs = []
     const fib = (num, prev) => {
-      if(i === n - 1) {
-        return num
+      fibs.push(num)
+      if(fibs.indexOf(num) === n - 1) {
+        return
       } else {
-        i++
         fib(num + prev, num)
       }
     }
-
     fib(0, 1)
+    return fibs[fibs.length - 1]
   },
 
   validParentheses: function(n) {
+    let parens = {
+      '(': ')',
+      '[': ']',
+      '{': '}'
+    }
 
+    let arr = n.split('')
+    let i = 0
+    const vals = []
+
+    const validateParens = (keyOrValue) => {
+      let includedInKeys = Object.keys(parens).includes(keyOrValue)
+      if((!includedInKeys && vals.length === 0) || (Object.values(parens).includes(keyOrValue) && keyOrValue !== vals[vals.length - 1])) {
+        return
+      } else if(includedInKeys){
+        i++
+        vals.push(parens[keyOrValue])
+        validateParens(arr[i])
+      } else {
+        i++
+        vals.pop()
+        validateParens(arr[i])
+      }
+    }
+
+    validateParens(arr[i])
+    return vals.length === 0
   }
 };

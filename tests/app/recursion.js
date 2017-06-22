@@ -56,4 +56,11 @@ describe('recursion', function() {
       expect(recursionAnswers.fibonacci(nums[i])).to.eql(answers[i])
     }
   })
+
+  it('you should be able to find a valid parenthesis set', () => {
+    expect(recursionAnswers.validParentheses('({[]})')).to.be.ok
+    expect(recursionAnswers.validParentheses('([{{()}}])')).to.be.ok
+    expect(recursionAnswers.validParentheses('(]')).to.be.not.ok
+    expect(recursionAnswers.validParentheses('({[})')).to.be.not.ok
+  })
 });
