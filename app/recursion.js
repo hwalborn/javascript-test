@@ -66,5 +66,9 @@ exports.recursionAnswers = {
 
   fibonacci: function(n) {
 
+  },
+
+  validParentheses: function(n) {
+
   }
 };
