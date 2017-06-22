@@ -11,10 +11,9 @@ exports.objectsAnswers = {
 
   iterate: function(obj) {
     let iterate = []
-    for(key in obj) {
-      debugger
+    Object.keys(obj).forEach((key) => {
       iterate.push(`${key}: ${obj[key]}`)
-    }
+    })
     return iterate
   }
 };
